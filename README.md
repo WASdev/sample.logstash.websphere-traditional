@@ -1,0 +1,1 @@
+# sample.logstash.websphere-traditional
