@@ -3,10 +3,10 @@
     "_id": "Was-Problems-K5-20180717",
     "_type": "dashboard",
     "_source": {
-      "title": "NWM Demo Dashboard",
+      "title": "Was-Problems-K5-20180717",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"was_hostsTable\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"was_userDirsTable\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"was_serversTable\",\"panelIndex\":4,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"was_topMessageIds\",\"panelIndex\":5,\"row\":3,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"loglevel\",\"module\",\"message\",\"ibm_sequence\"],\"id\":\"was_messageSearch\",\"panelIndex\":9,\"row\":9,\"size_x\":12,\"size_y\":4,\"sort\":[\"ibm_sequence\",\"desc\"],\"type\":\"search\"},{\"col\":4,\"id\":\"was_cellName\",\"panelIndex\":11,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"was_traceGraph\",\"panelIndex\":12,\"row\":6,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"size_x\":6,\"size_y\":3,\"panelIndex\":14,\"type\":\"visualization\",\"id\":\"AWcO6F-SOO6ErPMnwfex\",\"col\":7,\"row\":6}]",
+      "panelsJSON": "[{\"col\":1,\"id\":\"was_hostsTable\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"was_userDirsTable\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"was_serversTable\",\"panelIndex\":4,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"was_topMessageIds\",\"panelIndex\":5,\"row\":3,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"loglevel\",\"module\",\"message\",\"ibm_sequence\"],\"id\":\"was_messageSearch\",\"panelIndex\":9,\"row\":9,\"size_x\":12,\"size_y\":4,\"sort\":[\"ibm_sequence\",\"desc\"],\"type\":\"search\"},{\"col\":4,\"id\":\"was_cellName\",\"panelIndex\":11,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"was_traceGraph\",\"panelIndex\":12,\"row\":6,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"size_x\":6,\"size_y\":3,\"panelIndex\":14,\"type\":\"visualization\",\"id\":\"was_messages\",\"col\":7,\"row\":6}]",
       "optionsJSON": "{\"darkTheme\":false}",
       "uiStateJSON": "{\"P-11\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":0,\"direction\":\"asc\"}}}},\"P-2\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-3\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-4\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-13\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}}",
       "version": 1,
@@ -21,6 +21,29 @@
     "_type": "search",
     "_source": {
       "title": "Messages Search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "loglevel",
+        "module",
+        "message",
+        "ibm_sequence"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"_type:was_message\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+    {
+    "_id": "was_messageSearch2",
+    "_type": "search",
+    "_source": {
+      "title": "Messages Search, sorted by sequence",
       "description": "",
       "hits": 0,
       "columns": [
@@ -50,7 +73,7 @@
         "_source"
       ],
       "sort": [
-        "ibm_datetime",
+        "@timestamp",
         "desc"
       ],
       "version": 1,
@@ -64,6 +87,26 @@
     "_type": "search",
     "_source": {
       "title": "Was All Search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[],\"query\":{\"query_string\":{\"query\":\"_type:was_*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "was_all2",
+    "_type": "search",
+    "_source": {
+      "title": "Was All Search, sorted by sequence",
       "description": "",
       "hits": 0,
       "columns": [
@@ -84,6 +127,29 @@
     "_type": "search",
     "_source": {
       "title": "Was Trace Search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "loglevel",
+        "module",
+        "message",
+        "ibm_sequence"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"type:was_trace\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+    {
+    "_id": "was_traceSearch2",
+    "_type": "search",
+    "_source": {
+      "title": "Was Trace Search, sorted by sequence",
       "description": "",
       "hits": 0,
       "columns": [
@@ -233,7 +299,7 @@
     }
   },
   {
-    "_id": "AWcO6F-SOO6ErPMnwfex",
+    "_id": "was_messages",
     "_type": "visualization",
     "_source": {
       "title": "Was Messages",
