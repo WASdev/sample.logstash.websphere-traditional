@@ -1,11 +1,10 @@
 filebeat.inputs:
-- input_type: log
+- type: log
   paths:
-    - /logs/server1/hpelOutput.log
+    - /logs/messages.log
 
 processors:
 - add_cloud_metadata:
 
 output.logstash:
   hosts: ["logstash:5043"]
-
