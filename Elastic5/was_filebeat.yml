@@ -1,8 +1,8 @@
 filebeat.prospectors:
 - input_type: log
   paths:
-    - /logs/server1/hpelOutput.log
-
+    - /server-logs/hpelOutput*.log
+    
 processors:
 - add_cloud_metadata:
 
